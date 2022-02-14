@@ -11,11 +11,12 @@ In this webpage, you can store any book's name and author into the local storage
 ## Built With
 
 - HTML
+- CSS
 - JavaScript
 
 ## Live Page
 
-[Page Link](https://helio3197.github.io/awesome-books)
+[Page Link](https://kakalanp.github.io/Awesome-books-with-ES6/)
 
 
 ## Getting Started
@@ -34,7 +35,7 @@ To get a local copy up and running follow these simple steps.
 
 - Use this command to get a copy:
 ```
-git clone git@github.com:helio3197/awesome-books.git
+git clone https://github.com/Kakalanp/Awesome-books-with-ES6.git
 ```
 ### Usage
 
@@ -42,12 +43,6 @@ git clone git@github.com:helio3197/awesome-books.git
 
 
 ## Authors
-
-👤 **Kenny Salazar**
-
-- GitHub: [@helio3197](https://github.com/helio3197)
-- Twitter: [@kennysalazar31](https://twitter.com/kennysalazar31)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/kenny-salazar-1a1687110)
 
 👤 **Joaquin Garrido**
 
@@ -69,7 +64,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Thanks to Microverse for the guidelines.
-- Thanks to Joaquín Garrido for collaborating on the project.
+- Thanks to Kenny Salazar for making the base of this project with me.
 
 
 ## 📝 License
