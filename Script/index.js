@@ -1,22 +1,15 @@
+import saveInputs from '../modules/saveInputs.js';
+
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const contact = document.getElementById('contact');
+const bookWrapper = document.querySelector('#book-wrapper');
 let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
-}
-const bookWrapper = document.querySelector('#book-wrapper');
-
-function saveInputs() {
-  const formObj = {
-    titleField: title.value,
-    authorField: author.value,
-  };
-
-  localStorage.setItem('formBook', JSON.stringify(formObj));
 }
 
 title.addEventListener('input', saveInputs);

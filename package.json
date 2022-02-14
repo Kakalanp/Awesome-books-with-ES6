@@ -1,4 +1,6 @@
 {
+  "type": "module",
+  
   "name": "awesome-books-with-es6",
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
