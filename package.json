@@ -1,6 +1,5 @@
 {
   "type": "module",
-  
   "name": "awesome-books-with-es6",
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
@@ -18,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Kakalanp/Awesome-books-with-ES6/issues"
   },
-  "homepage": "https://github.com/Kakalanp/Awesome-books-with-ES6#readme"
+  "homepage": "https://github.com/Kakalanp/Awesome-books-with-ES6#readme",
+  "dependencies": {
+    "async": "^3.2.3",
+    "luxon": "^2.3.0"
+  }
 }

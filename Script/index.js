@@ -2,6 +2,7 @@ import saveInputs from '../modules/saveInputs.js';
 import Book from '../modules/bookClass.js';
 import createBooks from '../modules/createBooks.js';
 import switchDisplay from '../modules/switchDisplay.js';
+import {DateTime} from '../node_modules/luxon/build/es6/luxon.js';
 
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
@@ -10,6 +11,7 @@ const bookList = document.getElementById('book-list');
 const addBook = document.getElementById('add-book');
 const contact = document.getElementById('contact');
 const bookWrapper = document.querySelector('#book-wrapper');
+const time = document.getElementById('time');
 let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   switchDisplay();
   bookList.classList.remove('not-display');
+  time.innerHTML = DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
 });
 
 let bookId = 0;
@@ -64,3 +67,5 @@ contactNav.addEventListener('click', () => {
   switchDisplay();
   contact.classList.remove('not-display');
 });
+
+setInterval(() => {time.innerHTML = DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);}, 10000)

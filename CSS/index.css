@@ -71,6 +71,12 @@ nav a {
   padding: 4px 4px 2px 4px;
 }
 
+#time {
+  position: absolute;
+  top: 70px;
+  left: 85%;
+}
+
 section {
   margin-top: 88px;
   padding: 0 24px;
