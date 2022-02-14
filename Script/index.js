@@ -1,8 +1,9 @@
+/* eslint-disable import/no-cycle */
 import saveInputs from '../modules/saveInputs.js';
 import Book from '../modules/bookClass.js';
 import createBooks from '../modules/createBooks.js';
 import switchDisplay from '../modules/switchDisplay.js';
-import {DateTime} from '../node_modules/luxon/build/es6/luxon.js';
+import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
 
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
@@ -12,11 +13,14 @@ const addBook = document.getElementById('add-book');
 const contact = document.getElementById('contact');
 const bookWrapper = document.querySelector('#book-wrapper');
 const time = document.getElementById('time');
+// eslint-disable-next-line import/no-mutable-exports
 let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
 }
-export {library as default, bookWrapper, bookList, addBook, contact};
+export {
+  library as default, bookWrapper, bookList, addBook, contact,
+};
 
 title.addEventListener('input', saveInputs);
 author.addEventListener('input', saveInputs);
@@ -68,4 +72,4 @@ contactNav.addEventListener('click', () => {
   contact.classList.remove('not-display');
 });
 
-setInterval(() => {time.innerHTML = DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);}, 10000)
+setInterval(() => { time.innerHTML = DateTime.now().toLocaleString(DateTime.TIME_SIMPLE); }, 10000);
