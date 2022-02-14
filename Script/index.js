@@ -1,4 +1,7 @@
 import saveInputs from '../modules/saveInputs.js';
+import Book from '../modules/bookClass.js';
+import createBooks from '../modules/createBooks.js';
+import switchDisplay from '../modules/switchDisplay.js';
 
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
@@ -11,69 +14,10 @@ let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
 }
+export {library as default, bookWrapper, bookList, addBook, contact};
 
 title.addEventListener('input', saveInputs);
-
 author.addEventListener('input', saveInputs);
-
-class Book {
-  constructor(title, author, id) {
-    this.title = title;
-    this.author = author;
-    this.id = id;
-  }
-
-  addBook() {
-    library.push(this);
-    localStorage.setItem('library', JSON.stringify(library));
-  }
-
-  removeBook() {
-    library.forEach((e, i, lib) => {
-      if (e.id === this.id) {
-        lib.splice(i, 1);
-      }
-    });
-    localStorage.setItem('library', JSON.stringify(library));
-    createBooks(); // eslint-disable-line
-  }
-}
-
-function createBooks() {
-  const bookCollection = library.map((bookData) => new Book(
-    bookData.title, bookData.author, bookData.id,
-  ));
-
-  let number = 0;
-
-  bookWrapper.innerHTML = '';
-  bookCollection.forEach((book) => {
-    const div = document.createElement('div');
-    if (number % 2 === 0) {
-      div.className = 'background';
-    }
-    number += 1;
-    div.id = `book-${book.id}`;
-    div.innerHTML = `
-    <h2>${book.title}</h2>
-    <p>by</p>
-    <h3>${book.author}</h3>
-    <button type="button" class="remove-book">Remove</button>
-    `;
-    bookWrapper.appendChild(div);
-
-    const buttons = document.querySelector(`#book-${book.id} button`);
-    buttons.addEventListener('click', () => {
-      book.removeBook();
-    });
-  });
-}
-
-function switchDisplay() {
-  bookList.classList.add('not-display');
-  addBook.classList.add('not-display');
-  contact.classList.add('not-display');
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   createBooks();
